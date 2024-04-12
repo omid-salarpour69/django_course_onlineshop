@@ -42,8 +42,8 @@
 {% block content %}
     <h1>Logout</h1>
     <form action="" method="post">
-        {% csrf_token %}
         {{ form | crispy }}
+        {% csrf_token %}
         <button id="foot">
             <button class="button-os"  value="Log Out">
                 <a href="#">Logout</a>
