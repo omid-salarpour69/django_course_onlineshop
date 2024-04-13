@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from environs import Env
+import os
 
 # for environments variables
 env = Env()
@@ -51,6 +52,8 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     'allauth',
     'allauth.account',
+    'tailwind',
+    'theme',
 ]
 
 SITE_ID = 1
@@ -63,7 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "allauth.account.middleware.AccountMiddleware",
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -149,9 +152,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    str(BASE_DIR.joinpath('static'))
+    # os.path.join((BASE_DIR, 'static'),
+    str(BASE_DIR.joinpath('static')),
 ]
 
 # media files
@@ -178,3 +182,4 @@ ACCOUNT_UNIQUE_EMAIL = True
 # crispy forms
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+TAILWIND_APP_NAME = 'theme'
