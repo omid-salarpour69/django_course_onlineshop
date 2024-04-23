@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 from environs import Env
 import os
+from django.contrib.messages import constants as messages
 
 # for environments variables
 env = Env()
@@ -54,6 +55,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'tailwind',
     'theme',
+    'rosetta',
 ]
 
 SITE_ID = 1
@@ -142,7 +144,16 @@ EMAIL_HOST_PASSWORD = 'hzch korg ecsx sphd'
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 # LANGUAGE_CODE = 'en-us'
-LANGUAGE_CODE = 'fa'
+LANGUAGE_CODE = 'fa-ir'
+
+LANGUAGES = (
+    ('en', 'English'),
+    ('fa', 'Persian'),
+)
+
+LOCALE_PATHS = (
+    'templates/locale',
+)
 
 # TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Tehran'
@@ -185,3 +196,8 @@ ACCOUNT_UNIQUE_EMAIL = True
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 TAILWIND_APP_NAME = 'theme'
+
+# for messages framework
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
