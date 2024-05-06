@@ -8,14 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-16 20:03+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2024-05-05 20:30+0330\n"
+"PO-Revision-Date: 2024-05-05 20:33+0330\n"
+"Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
 
 #: .\models.py:30
 msgid "Very Bad"
@@ -45,38 +46,72 @@ msgstr "متن دیدگاه"
 msgid "Score"
 msgstr "امتیاز"
 
-#: .\templates\products\product_detail.html:62
+#: .\templates\products\product_detail.html:65
 msgid "Add to Card"
 msgstr "اضافه به سبد خرید"
 
-#: .\templates\products\product_detail.html:80
+#: .\templates\products\product_detail.html:98
 msgid "Product Description"
 msgstr "توضیحات محصول"
 
-#: .\templates\products\product_detail.html:121
+#: .\templates\products\product_detail.html:146
 msgid "color"
 msgstr "رنگ"
 
-#: .\templates\products\product_detail.html:123
+#: .\templates\products\product_detail.html:148
 msgid "black"
 msgstr "مشکی"
 
-#: .\templates\products\product_detail.html:124
+#: .\templates\products\product_detail.html:149
 msgid "green"
 msgstr "سبز"
 
-#: .\templates\products\product_detail.html:125
+#: .\templates\products\product_detail.html:150
 msgid "red"
 msgstr "قرمز"
 
-#: .\templates\products\product_detail.html:126
+#: .\templates\products\product_detail.html:151
 msgid "orange"
 msgstr "نارنجی"
 
-#: .\templates\products\product_detail.html:178
+#: .\templates\products\product_detail.html:207
 msgid "Write your comment"
 msgstr "نظر خود را بنویسید"
 
-#: .\templates\products\product_detail.html:187
+#: .\templates\products\product_detail.html:215
 msgid "Submit"
 msgstr "ارسال"
+
+#: .\templates\products\product_detail.html:219
+#, fuzzy
+#| msgid "Write your comment"
+msgid "To write your comment please"
+msgstr "نظر خود را بنویسید"
+
+#: .\templates\products\product_detail.html:221
+msgid "Login"
+msgstr "ورود"
+
+#: .\templates\products\product_detail.html:290
+msgid "Cart"
+msgstr "سبد خرید"
+
+#: .\templates\products\product_detail.html:308
+msgid "$"
+msgstr "تومان"
+
+#: .\templates\products\product_detail.html:315
+msgid "Total"
+msgstr "مجموع"
+
+#: .\templates\products\product_detail.html:319
+msgid "Go to cart"
+msgstr "محصولات"
+
+#: .\templates\products\product_detail.html:320
+msgid "Checkout"
+msgstr "پرداخت"
+
+#: .\views.py:43
+msgid "Comment successfully created"
+msgstr "نظر شما با موفقیت ثبت شد"
