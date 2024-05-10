@@ -175,7 +175,6 @@ STATICFILES_DIRS = [
 ]
 
 # media files
-# media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 
