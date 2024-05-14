@@ -44,12 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # local app
-    'accounts.apps.AccountsConfig',
-    'pages.apps.PagesConfig',
-    'products.apps.ProductsConfig',
-    'cart.apps.CartConfig',
+
+    'django.contrib.humanize',
+
     # third app
+    'jalali_date',
     'crispy_forms',
     "crispy_bootstrap5",
     'allauth',
@@ -57,6 +56,13 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'rosetta',
+
+    # local app
+    'accounts.apps.AccountsConfig',
+    'pages.apps.PagesConfig',
+    'products.apps.ProductsConfig',
+    'cart.apps.CartConfig',
+    'persian_translate.apps.PersianTranslateConfig',
 ]
 
 SITE_ID = 1
