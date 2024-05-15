@@ -4,10 +4,15 @@ from django.shortcuts import reverse
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 
+from ckeditor.fields import RichTextField
+
 
 class Product(models.Model):
+    """
+    high level support for doing this and that.
+    """
     title = models.CharField(max_length=100)
-    description = models.TextField()
+    description = RichTextField()
     price = models.PositiveIntegerField()
     active = models.BooleanField(default=True)
     image = models.ImageField(verbose_name=_('Product Image'), upload_to='product/product_cover', blank=True,)
@@ -19,6 +24,9 @@ class Product(models.Model):
         return self.title
 
     def get_absolute_url(self):
+        """
+        high level support for doing this and that.
+        """
         return reverse('product_detail', args=[self.pk])
 
 
@@ -40,8 +48,8 @@ class Comment(models.Model):
     author = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
-        related_name='comments', 
-        verbose_name='Comment author'
+        related_name='comments',
+        verbose_name='Comment author',
     )
     body = models.TextField(verbose_name=_('Comment Text'))
     stars = models.CharField(max_length=10, choices=PRODUCT_STARS, verbose_name=_('Score'))

@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'rosetta',
+    'ckeditor',
 
     # local app
     'accounts.apps.AccountsConfig',
@@ -179,6 +180,7 @@ STATICFILES_DIRS = [
     # os.path.join((BASE_DIR, 'static'),
     str(BASE_DIR.joinpath('static')),
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # media files
 MEDIA_URL = '/media/'
