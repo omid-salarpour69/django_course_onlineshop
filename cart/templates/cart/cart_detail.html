@@ -18,6 +18,7 @@
 
     {% translate 'Cart' as header_name %}
     {% include 'topheader.html' with header_name=header_name%}
+
     <!-- Main Content Wrapper Start -->
     <div class="main-content-wrapper">
         <div class="page-content-inner ptb--80">
@@ -48,7 +49,7 @@
                                                     </a>
                                                 </td>
                                                 <td class="product-thumbnail text-left">
-                                                    <img src="assets/img/products/prod-10-70x88.jpg">
+                                                    <img src="{{ item.product_obj.image.url }}">
                                                 </td>
                                                 <td class="product-name">
                                                     <h3>
@@ -91,11 +92,18 @@
                                 </div>
                             </div>
                         </div>
+                    {% if not cart.is_empty %}
                         <div class="row no-gutters border-top pt--20 mt--20">
                             <div class="col-sm-6 text-sm-right">
-                                <button type="submit" class="cart-form__btn">خالی کردن سبد خرید</button>
+                                <form action="{% url 'cart:cart_clear' %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="cart-form__btn">
+                                        {% translate 'Empty cart' %}
+                                    </button>
+                                </form>
                             </div>
                         </div>
+                    {% endif %}
                     </div>
                     <div class="col-lg-4">
                         <div class="cart-collaterals">
@@ -122,8 +130,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="checkout.html" class="btn btn-fullwidth btn-bg-red btn-color-white btn-hover-2">
-                                ثبت سفارش
+                            <a href="{% url 'order_create' %}" class="btn btn-fullwidth btn-bg-red btn-color-white btn-hover-2">
+                                {% translate 'record order' %}
                             </a>
                         </div>
                     </div>

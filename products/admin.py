@@ -9,7 +9,7 @@ class CommentInline(admin.TabularInline):
     fields = [
         'author', 'body', 'stars', 'active',
     ]
-    extra = 0
+    extra = 1
 
 
 @admin.register(Product)
